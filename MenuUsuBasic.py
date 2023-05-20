@@ -3,10 +3,15 @@ from colores import *
 import tkinter as tk
 import colores
 from tkinter import ttk
-from remision import ventanaremision
+from Remision import ventanaremision
 from tkinter import FLAT
 
-def abrir_menubc(ventana):
+def abrir_menubc(abrirmenu):
+
+    def funcion_abrirremision(abrirventanaremision):
+        ventana_menubc.destroy()
+        ventanaremision(abrirventanaremision)
+
     #Creacio
     ventana_menubc = tk.Tk()
     ventana_menubc.title("Menu")
@@ -22,7 +27,7 @@ def abrir_menubc(ventana):
     ventana_menubc.geometry("{}x{}+{}+{}".format(ancho, alto, posx, posy))
     ventana_menubc.resizable(0, 0)
 
-    #Label Orden
+    #Label remision
     titulo1 = Label(ventana_menubc,
                     text="Remisión",
                     bg=gris,
@@ -31,7 +36,8 @@ def abrir_menubc(ventana):
     titulo1.place(x=310, y=430)
 
 
-    #Boton Orden
+
+    #Boton remision
     img = tk.PhotoImage(file="imagenes/factura.png")
     img = img.subsample(3, 3)
     buttonorden = tk.Button(ventana_menubc, image=img,bg=gris,activebackground=gris, command=lambda:funcion_abrirremision(ventana_menubc) )
@@ -48,7 +54,7 @@ def abrir_menubc(ventana):
     textoinventario.place(x=932, y=430)
 
     #Boton Inventario
-    img1 = tk.PhotoImage(file="imagenes/1referencia.png")
+    img1 = tk.PhotoImage(file="imagenes/referencia.png")
     img1 = img1.subsample(3, 3)
     buttoninventario = tk.Button(ventana_menubc, image=img1,bg=gris,activebackground=gris, command=lambda: print("Button clicked"))
     buttoninventario.pack()
@@ -62,10 +68,7 @@ def abrir_menubc(ventana):
     ventana_menubc.mainloop()
 
 
-def funcion_abrirremision(ventana):
-    ventana1=abrir_menubc(ventana)
-    ventana1.destroy()
-    ventanaremision(ventana )
+
 def salir():
     pass
 

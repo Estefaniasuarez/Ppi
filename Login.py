@@ -1,11 +1,11 @@
 from tkinter import *
-from  tkinter import font
+from tkinter import font, messagebox
 import colores
 from colores import *
 from MenuUsuBasic import abrir_menubc
 
 
-
+# Alerta             messagebox.showinfo(message="El usuario ya se encuentra registrado", title="Alerta")
 #crea ventana con x dimenciones
 principal = Tk()
 principal.configure(bg=gris)
@@ -41,10 +41,23 @@ Label_imagen1.image = imagen1
 Label_imagen1.place(x=600, y=150)
 
 
+#Funcion ingresar al menu
+#Estructura
+# def FUNCION(dato que retorna)
+#      destruimos la ventana actual ejemplo principal.destroy()
+#      abrimos la ventana siguiente  ejemplo abrir_menubc(abrirventanamenu)
+#
+#Nota1 (Exportamos la funcion de la ventana que vamos abrir ejemplo
+#Nota2 Para que el boton fuincione se debe agregar en el boton el sig comando command=lambda: funcionIngresar(principal)
+#Sintaxis  command=lambda: Nombrefuncion(ventana actual)
+#Nota3 siempre la funcion del boton debe ir encima de el boton
+def funcionIngresar(abrirventanamenu):
+    if entry_usuario.get()=="" and entry_contrasena.get()=="":
+        principal.destroy()
+        abrir_menubc(abrirventanamenu)
+    else:
+        messagebox.showinfo(message="Usuario Incorrecto", title="Alerta")
 
-def funcionIngresar(ventana):
-    principal.destroy()
-    abrir_menubc(ventana)
 
 boton_ingresar = Button(principal,
                         text="Ingresar",

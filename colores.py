@@ -15,6 +15,7 @@ letra_pequena = font=("Times New Roman", 20)
 letra_mediana = font=("Times New Roman", 30)
 letra_grande = font=("Times New Roman", 40)
 imagen1 = Image.open ("imagenes/LogobararcaicoCortado.png").resize((180,180),Image.ANTIALIAS)
+imagen2 = Image.open ("imagenes/ColorFondoRemision.png").resize((300,500),Image.ANTIALIAS)
 
 
 
