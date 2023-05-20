@@ -1,7 +1,7 @@
 from tkinter import *
 from colores import *
 
-def abrir_ventana2(ventana):
+def ventanaremision(ventana3):
     ventana1 = Tk(negro)
     titulo = Label(ventana1, text="Bienvenido",
                    font=letra_mediana, bg=negro,fg=blanco)
@@ -10,8 +10,8 @@ def abrir_ventana2(ventana):
     alto = 750
 
     # ajustas a pesta;a
-    posx = int(ventana.winfo_screenwidth() / 2 - (ancho / 2))
-    posy = int(ventana.winfo_screenheight() / 2 - (alto / 2))
+    posx = int(ventana1.winfo_screenwidth() / 2 - (ancho / 2))
+    posy = int(ventana1.winfo_screenheight() / 2 - (alto / 2))
 
     ventana1.geometry("{}x{}+{}+{}".format(ancho, alto, posx, posy))
     ventana1.resizable(0, 0)

@@ -2,7 +2,7 @@ from tkinter import *
 from  tkinter import font
 import colores
 from colores import *
-from iniciomenu import abrir_menubc
+from MenuUsuBasic import abrir_menubc
 
 
 

@@ -5,7 +5,7 @@ from tkinter import Button
 from colores import *
 from tkinter.ttk import Label
 from tkinter.ttk import Entry
-from iniciomenu import abrir_ventana1
+from MenuUsuBasic import abrir_ventana1
 
 
 def mostrar_formulario(ventana_principal):
