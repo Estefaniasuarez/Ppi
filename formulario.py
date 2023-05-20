@@ -24,7 +24,7 @@ def mostrar_formulario(ventana_principal):
     usuario = Label(formulario, text="Nombre: *", font=letra_pequena,background=gris,foreground=negro)
     usuario.place(x=30, y=70)
 
-    entry_usuario = Entry(formulario, width=47, )
+    entry_usuario = Entry(formulario, width=200, )
     entry_usuario.place(x=70, y=110)
     tkinter.ttk.Style().configure("TButton", background=negro, foreground=negro)
 

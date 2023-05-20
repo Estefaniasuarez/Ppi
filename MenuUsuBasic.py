@@ -16,7 +16,7 @@ def abrir_menubc(abrirmenu):
     ventana_menubc = tk.Tk()
     ventana_menubc.title("Menu")
     ventana_menubc.configure(bg=gris)
-    titulo = Label(ventana_menubc, text="Menu",font=letra_mediana, bg=gris,fg=negro)
+    titulo = Label(ventana_menubc, text="Menu",font=letra_grande, bg=gris,fg=negro)
     titulo.place(in_=ventana_menubc,anchor="center", relx=0.5, rely=0.11)
     ancho = 1355
     alto = 750

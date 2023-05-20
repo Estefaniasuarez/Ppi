@@ -51,19 +51,74 @@ Label_imagen1.place(x=600, y=150)
 #Nota2 Para que el boton fuincione se debe agregar en el boton el sig comando command=lambda: funcionIngresar(principal)
 #Sintaxis  command=lambda: Nombrefuncion(ventana actual)
 #Nota3 siempre la funcion del boton debe ir encima de el boton
-def funcionIngresar(abrirventanamenu):
-    if entry_usuario.get()=="" and entry_contrasena.get()=="":
-        principal.destroy()
-        abrir_menubc(abrirventanamenu)
-    else:
+def funcionIngresar(abrirventanamenu,usuario,contra):
+
+
+
+
+    #Leer datos archivo plano
+    archivo = open("Datos/Usuarios.txt", "r")
+    #separa por lineas el archivo plano
+    usuariosl = archivo.readlines()
+
+    #vector que guarda datos a comparar
+    registro = []
+
+    #validacion de datos
+    registrado = False
+    #ciclo para recorrer linea por liena del arhivo y guardar los datos en line
+    for line in usuariosl:
+        #guarda en registro (vector) los datos separados de line en posiciones del vector
+        registro = line.split()
+        print('Datos de los entry ')
+        print(usuario)
+        print(contra)
+        print('Datos del archivo plano ')
+        print(registro[0])
+        print(registro[1])
+
+        if line == '':
+            break
+
+
+        for line in usuariosl:
+            registro = line.split()
+            if registro[0] == usuario and registro[1] == contra:
+                principal.destroy()
+                abrir_menubc(abrirventanamenu)
+                registrado = True
+                break
+
+
+
+
+    if usuario == '' or contra == '':
+        messagebox.showinfo(message="Ingrese usuario y contraseña", title="Alerta")
+    elif(registrado == False):
         messagebox.showinfo(message="Usuario Incorrecto", title="Alerta")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 boton_ingresar = Button(principal,
                         text="Ingresar",
                         bg=negro,
                         fg=blanco,
-                        command=lambda: funcionIngresar(principal),
+                        command=lambda: funcionIngresar(principal,entry_usuario.get(),entry_contrasena.get()),
                         font=letra_pequena,
                         activebackground=gris,
                         activeforeground=negro)
